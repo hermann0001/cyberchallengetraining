@@ -14,22 +14,24 @@ OUTPUT_PATH = "myoutput/"
 class Task:
     def __init__(self, tid, flag, score):
         self.tid = tid              # task id
-        self.flag = flag                  # flag string
+        self.flag = flag            # flag string
         self.score = score          # score
+    
+    def __str__(self):
+        return f"Task: tid={self.tid}, flag={self.flag}, score={self.score}"
 
 class Submission: 
     def __init__(self, pid, tid, flag, timestamp):
         self.pid = pid              # player id
         self.tid = tid              # task id
-        self.flag = flag                  # flag string
+        self.flag = flag            # flag string
         self.timestamp = timestamp  # time of submission
 
     def __str__(self):
         return f"Submission: pid={self.pid}, tid={self.tid}, flag={self.flag}, timestamp={self.timestamp}"
 
-
-
-
+task_completed = {}             # task completed by a player
+last_timestamps = {}            # last submission timestamp that modified score
 
 def read_input(filename):
     tasks = []
@@ -55,8 +57,40 @@ def read_input(filename):
 
     return M, N, S, tasks, submissions, scores
 
+def tiebreak(x):
+    # 1. Desceding score points
+    score_points = x[1]
+    # print("score", score_points)
+
+    # 2. Ascending timestamp of last scored submission
+    # for sub in submissions:
+    #     # if this submitted at least one flag and scored one task 
+    #     if sub.pid == x[0] and x[1] > 0:
+    #         # Retrieve the timestamp from last completed task
+    #         last_taskid = task_completed[sub.pid][-1]
+    #         if sub.tid == last_taskid:
+    #             last_timestamp = sub.timestamp
+    #             break
+    #     else:
+    #         last_timestamp = 0
+    if x[0] in last_timestamps:
+        last_timestamp = last_timestamps[x[0]]
+    else:
+        last_timestamp = 0
+
+    # print("last timestamp", last_timestamp)
+    
+    # 3. Ascending player-id
+    player_id = x[0]
+    # print("player-id", player_id)
+
+
+    return (score_points, -last_timestamp, -player_id)
+
+
 def check(tasks, submissions, scores):
-    task_completed = {}             # task completed by a player
+
+    submissions.sort(key=lambda x: x.timestamp)
 
     for s in submissions:
         # take the task associated for this submission
@@ -64,19 +98,30 @@ def check(tasks, submissions, scores):
 
         # check if the player has solved this task before
         if s.pid not in task_completed:
-            task_completed[s.pid] = set()
+            task_completed[s.pid] = list()
 
         if task.tid not in task_completed[s.pid]:
             # check correctness of flag
             if task.flag == s.flag:
                 scores[s.pid] += task.score
-                task_completed[s.pid].add(task.tid)
+                task_completed[s.pid].append(task.tid)
+                last_timestamps[s.pid] = s.timestamp
 
-    tiebreak = lambda x: (
-        x[1],                                                                                 # Desceding score points
-        -next((sub.timestamp for sub in submissions if sub.pid == x[0] and x[1] > 0), 0),     # Ascending timestamp
-        -x[0]                                                                                 # Asceding player-id
-    )
+
+    # print("--SUBMISSIONS---")
+    # for s in submissions: 
+    #     print(s)
+    # print("\n--TASKS---")
+    # for t in tasks:
+    #     print(t)
+    # print("\n--TASKS COMPLETED---")
+    # for key, value in task_completed.items():
+    #     print(key, value)
+    # print("\n--LAST TIMESTAMPS---")
+    # for key, value in last_timestamps.items():
+    #     print(key, value)
+    # print("\n--SCORES---")
+    # print(scores)
 
     return dict(sorted(scores.items(), key=tiebreak, reverse=True))
 
@@ -92,6 +137,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python3 winner.py <filename>")
         sys.exit(1)
+
     input_file = os.path.join(INPUT_PATH, sys.argv[1])
     M, N, S, tasks, submissions, scores = read_input(input_file)
     final_scoreboard = check(tasks, submissions, scores)
