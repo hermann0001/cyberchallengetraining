@@ -25,31 +25,28 @@ def write_output(filename, W):
         file.write(f"{W}\n")
 
 def calculate(N, T, times, workers):
-    task_heap = [(0, i) for i in range(workers)]  # Priority queue (heap) to efficiently find the worker with minimum workload
+    # Priority queue (heap) to efficiently find the worker with minimum workload
+    task_heap = [(0, i) for i in range(workers)]  
+
+    # Keep this print if you want to track the min(W) search for input-3-*.txt 
     print("attempting with workers:", workers)
     # step 1 - find minimum time in the time table
-    i = 0
-    while i < N:
+    for i in range(N):
         finish_time, worker_index = heapq.heappop(task_heap)
 
         # step 2 - assign the new task to the worker
-        # print("assegno task numero", i, "al lavoratore", worker_index)
         if finish_time + times[i] > T:
-            # workers += 1
-            # task_heap = [(0, j) for j in range(workers)]  # Re-initialize the heap
-            # i = 0
-            # print("sto per ritornare false, somma=",finish_time + times[i])
             return False
 
         else:
             finish_time += times[i]
             heapq.heappush(task_heap, (finish_time, worker_index))
-            i += 1
 
     return True
 
 
 def bin_search(N, T, times):
+    # estimate a lower bound for W 
     low = math.ceil(sum(times) / T)
     high = N
 
@@ -78,11 +75,11 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python workers.py <input filename>")
         sys.exit(1)
+
     input_file = os.path.join(INPUT_PATH, sys.argv[1])
     N, T, tasks_time = read_input(input_file)
 
     W = bin_search(N, T, tasks_time)
-    #W = calculate(N, T, tasks_time, 558379)
 
     output_file = os.path.join(OUTPUT_PATH, "output.txt")
     write_output(output_file, W)
