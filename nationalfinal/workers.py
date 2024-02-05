@@ -9,6 +9,7 @@
 import os
 import sys
 import math
+import heapq
 
 
 INPUT_PATH = "input/"
@@ -24,26 +25,33 @@ def write_output(filename, W):
     with open(filename, 'wt+') as file:
         file.write(f"{W}\n")
 
-# bruteforce
 def calculate(N, T, times, workers):
-    time_tables = {}                # dictionary to assign for each worker the finish time
+    #time_tables = {}                # dictionary to assign for each worker the finish time
+    task_heap = [(0, i) for i in range(workers)]  # Priority queue (heap) to efficiently find the worker with minimum workload
 
-    print("initial guess:", workers)
-    # step 1 - assign task to all workers
+    #print("initial guess:", workers)
 
-    for i in range(workers):
-        time_tables[i] = times[i]
 
-    # step 2 - find minimum time in the time table
-    for i in range(workers, N):
-        first_to_finish = min(time_tables, key=time_tables.get)
+    # step 1 - find minimum time in the time table
+    i = 0
+    while i < N: 
+        finish_time, worker_index = heapq.heappop(task_heap)
 
-        # step 3 - assign the new task to the worker
-        print("assegno task numero", i)
-        if time_tables[first_to_finish] + times[i] >= T:
-            return calculate(N, T, times, workers+1)
+        # step 2 - assign the new task to the worker
+        #print("assegno task numero", i, "al lavoratore", worker_index)
+        if finish_time + times[i] >= T:
+            # heapq.heappush(task_heap, (times[i], workers))
+            #return calculate(N, T, times, workers+1)
+            workers += 1
+            #task_heap = [(0, j) for j in range(workers)]  # Re-initialize the heap
+            i = 0
+            print("workers:", workers)
+
         else:
-            time_tables[first_to_finish] += times[i]
+            finish_time += times[i]
+            #print("pushing", (finish_time, worker_index))
+            heapq.heappush(task_heap, (finish_time, worker_index))
+            i += 1
 
     return workers         
 
