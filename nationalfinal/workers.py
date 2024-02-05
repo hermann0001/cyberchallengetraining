@@ -8,6 +8,7 @@
 
 import os
 import sys
+import math
 
 
 INPUT_PATH = "input/"
@@ -27,22 +28,20 @@ def write_output(filename, W):
 def calculate(N, T, times, workers):
     time_tables = {}                # dictionary to assign for each worker the finish time
 
+    print("initial guess:", workers)
     # step 1 - assign task to all workers
+
     for i in range(workers):
         time_tables[i] = times[i]
 
-    print("ho inizializzato i dati")
     # step 2 - find minimum time in the time table
     for i in range(workers, N):
         first_to_finish = min(time_tables, key=time_tables.get)
 
         # step 3 - assign the new task to the worker
-        #print(time_tables[first_to_finish] + times[i])
         print("assegno task numero", i)
         if time_tables[first_to_finish] + times[i] >= T:
-            print("sto per fare l a chiamata ricorsiva a ")
             return calculate(N, T, times, workers+1)
-            
         else:
             time_tables[first_to_finish] += times[i]
 
@@ -55,7 +54,7 @@ if __name__ == "__main__":
         sys.exit(1)
     input_file = os.path.join(INPUT_PATH, sys.argv[1])
     N, T, tasks_time = read_input(input_file)
-    W = calculate(N, T, tasks_time, 101088)
+    W = calculate(N, T, tasks_time, math.ceil(sum(tasks_time) / T))
 
     output_file = os.path.join(OUTPUT_PATH, "output.txt")
     write_output(output_file, W)
