@@ -39,7 +39,7 @@ def read_input(filename):
 
             test_cases.append((skills_required, players_info))
 
-    return T, N, M, S, test_cases
+    return T, test_cases
 
 def write_output(filename, T):
     with open(filename, 'wt+') as file:
@@ -48,23 +48,46 @@ def write_output(filename, T):
 
 
 # so parallelizable...
-def maketeam(test_cases_info):    
-    print(type(test_cases_info))
+def maketeam(test_cases_info):
+
+    final_scores = []
+
+    for skills_required, team_info in test_cases_info:
+        print("skills required", skills_required)
+        team_score = 0
+
+        for s in skills_required:
+            owners = {}
+            owners[s] = list()
+            print("searching for players with:", s)
+            for pi, skill in team_info.items():
+                # if player has the skill searched
+                if s in skill:
+                    owners[s].append({pi : skill[s]})
+                    print("added k:", pi, "v:", skill[s])
+            # retrieve the player (max_key) with maximum skill score (max_value) for s
+            max_key, max_value = max(owners.items(), key=lambda x: x[1])
+            team_score += max_value
+        final_scores.append(team_score)
+
+    return final_scores    
+
+        
+
     
-    teamscore = (0)
 
-    for skill in skills_required:
-        # Read first skill required and make a group of every player who has it
-        owners = {}
+    # for skill in skills_required:
+    #     # Read first skill required and make a group of every player who has it
+    #     owners = {}
 
-        for player in players_info:
-            for player_skill, score in players_info[player].items():
-                if player_skill in skills_required:
-                    owners[player] = score
+    #     for player in players_info:
+    #         for player_skill, score in players_info[player].items():
+    #             if player_skill in skills_required:
+    #                 owners[player] = score
 
-        # Retrieve the player with maximum skill score
-        candidate, score = max(owners.items(), key=lambda x: x[1])
-        teamscore += score
+    #     # Retrieve the player with maximum skill score
+    #     candidate, score = max(owners.items(), key=lambda x: x[1])
+    #     teamscore += score
 
 
 if __name__ == "__main__":
@@ -74,12 +97,12 @@ if __name__ == "__main__":
         sys.exit(1)
     
     input_file = os.path.join(INPUT_PATH, sys.argv[1])
-    T, N, M, S, test_cases_info = read_input(input_file)
+    T, test_cases_info = read_input(input_file)
 
     T = maketeam(test_cases_info)
 
-    output_file = os.path.join(OUTPUT_PATH, "output.txt")
-    write_output(output_file, T)
+    # output_file = os.path.join(OUTPUT_PATH, "output.txt")
+    # write_output(output_file, T)
 
         
         
