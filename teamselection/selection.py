@@ -55,7 +55,6 @@ def maketeam(test_cases_info):
 
     for skills_required, team_info in test_cases_info:
         #print("skills required", skills_required)
-        players_unassigned = team_info.keys()
         skill2occ = {}
         for s in skills_required:
             skill2occ[s] = skills_required.count(s)
@@ -76,12 +75,18 @@ def maketeam(test_cases_info):
             owners[s].sort(key=lambda x: x[1], reverse=True)
 
             # pick players
-            print(players_unassigned)
-            print("skill required:", s, owners[s])
-            print(occ)
-            for i in range(occ):
-                selections.append(owners[s][i])
+            for i in range(min(occ, len(owners[s]))):
+                selections.append(owners[s].pop(i))
+
+            # put empty if there are more requested player than available
+            empty = occ - len(owners[s])
+            if empty > 0:
+                for i in range(empty):
+                    selections.append((0, 0))
             
+            # find playerid duplicates except 0
+            for non lo so
+
         final_scores.append(sum(tupla[1] for tupla in selections))
 
     return final_scores    
