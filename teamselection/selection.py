@@ -43,7 +43,8 @@ def read_input(filename):
 
 def write_output(filename, T):
     with open(filename, 'wt+') as file:
-        for value in range(T):
+        #print(T, type(T))
+        for value in T:
             file.write(f"{value}\n")
 
 
@@ -53,42 +54,37 @@ def maketeam(test_cases_info):
     final_scores = []
 
     for skills_required, team_info in test_cases_info:
-        print("skills required", skills_required)
-        team_score = 0
-
+        #print("skills required", skills_required)
+        players_unassigned = team_info.keys()
+        skill2occ = {}
         for s in skills_required:
-            owners = {}
+            skill2occ[s] = skills_required.count(s)
+        
+        #print(skill2occ)
+
+        owners = {}
+        selections = []
+        for s, occ in skill2occ.items():
             owners[s] = list()
-            print("searching for players with:", s)
-            for pi, skill in team_info.items():
+            #print("searching for players with:", s)
+            for pid, skill in team_info.items():
                 # if player has the skill searched
                 if s in skill:
-                    owners[s].append({pi : skill[s]})
-                    print("added k:", pi, "v:", skill[s])
-            # retrieve the player (max_key) with maximum skill score (max_value) for s
-            max_key, max_value = max(owners.items(), key=lambda x: x[1])
-            team_score += max_value
-        final_scores.append(team_score)
+                    owners[s].append((pid, skill[s]))
+
+            # sort skill score descend            
+            owners[s].sort(key=lambda x: x[1], reverse=True)
+
+            # pick players
+            print(players_unassigned)
+            print("skill required:", s, owners[s])
+            print(occ)
+            for i in range(occ):
+                selections.append(owners[s][i])
+            
+        final_scores.append(sum(tupla[1] for tupla in selections))
 
     return final_scores    
-
-        
-
-    
-
-    # for skill in skills_required:
-    #     # Read first skill required and make a group of every player who has it
-    #     owners = {}
-
-    #     for player in players_info:
-    #         for player_skill, score in players_info[player].items():
-    #             if player_skill in skills_required:
-    #                 owners[player] = score
-
-    #     # Retrieve the player with maximum skill score
-    #     candidate, score = max(owners.items(), key=lambda x: x[1])
-    #     teamscore += score
-
 
 if __name__ == "__main__":
     
@@ -101,8 +97,8 @@ if __name__ == "__main__":
 
     T = maketeam(test_cases_info)
 
-    # output_file = os.path.join(OUTPUT_PATH, "output.txt")
-    # write_output(output_file, T)
+    output_file = os.path.join(OUTPUT_PATH, "output.txt")
+    write_output(output_file, T)
 
         
         
