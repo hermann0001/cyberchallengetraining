@@ -1,0 +1,193 @@
+192
+add d 21
+lab od
+add e 40
+add a 41
+mul a 23
+jmp a 943 od
+sub a 82
+sub a 99
+mul a 96
+jmp a 73152 od
+jmp e 40 od
+mul c 12
+mul c 78
+sub a 55
+jmp e 40 od
+sub a 69
+jmp a 73028 od
+add e 9
+mul a 2
+jmp e 49 od
+mul b 33
+lab dl
+sub e 35
+sub d 21
+mul e 33
+mul b 11
+mul d 21
+lab ve
+sub e 98
+add e 51
+lab cn
+lab jp
+lab kh
+add e 89
+add d 49
+lab vu
+lab ru
+mul c 46
+add c 86
+jmp c 86 vu
+add d 19
+mul e 43
+sub e 64
+sub e 24
+sub a 46
+jmp a 146010 cn
+sub a 1
+lab fl
+lab jc
+add e 89
+mul d 80
+sub c 32
+lab ie
+lab cg
+add a 86
+add a 67
+lab au
+mul e 24
+mul c 69
+jmp c 3726 od
+add c 2
+add d 57
+add c 35
+jmp a 146162 kh
+sub e 46
+jmp d 5497 fl
+add e 60
+sub e 37
+sub a 35
+add c 85
+sub e 24
+add b 37
+sub d 62
+add e 18
+add c 30
+jmp e 520123 ru
+add a 10
+mul b 65
+mul d 54
+add d 40
+sub a 37
+jmp b 2405 vu
+sub d 70
+mul c 100
+mul b 41
+add b 81
+add a 32
+add c 44
+jmp b 98686 vu
+sub e 49
+jmp c 387844 ie
+jmp e 520074 ve
+sub a 42
+lab tw
+add b 71
+sub b 7
+sub e 19
+add a 8
+lab zj
+sub c 6
+add d 2
+mul a 7
+lab tt
+add c 43
+lab sj
+jmp d 293462 cg
+jmp d 293462 tw
+add b 91
+add c 10
+jmp b 98841 tt
+jmp e 520055 cn
+sub c 75
+sub e 51
+add d 60
+jmp b 98841 zj
+sub d 4
+lab pc
+lab dm
+lab rs
+jmp e 520004 tt
+lab br
+sub b 61
+jmp e 520004 jc
+jmp d 293518 od
+sub e 82
+jmp c 387816 ru
+jmp e 519922 dm
+mul e 2
+lab pr
+sub e 81
+add b 35
+mul b 7
+add c 33
+add b 99
+jmp b 691804 dl
+add d 83
+add d 40
+sub c 91
+add e 89
+sub a 84
+add d 66
+add b 100
+lab qt
+lab je
+add b 68
+sub c 15
+add d 46
+lab lf
+sub d 36
+jmp d 293717 tw
+lab se
+lab ec
+jmp c 387743 dl
+add b 42
+lab uf
+sub e 81
+lab qn
+add e 47
+add b 64
+lab ly
+add e 100
+jmp e 1039918 tt
+jmp b 692078 lf
+jmp a 1022602 tt
+sub c 64
+add c 41
+sub a 35
+lab cp
+lab ff
+sub c 70
+sub d 79
+jmp c 387650 dm
+lab bz
+add a 72
+sub c 78
+lab zf
+lab zs
+jmp b 692078 dl
+lab ck
+lab du
+lab ol
+sub a 64
+add a 61
+add c 85
+sub b 59
+jmp a 1022636 cn
+lab dn
+add a 45
+sub b 6
+add b 63
+jmp e 1039918 se
+add d 22

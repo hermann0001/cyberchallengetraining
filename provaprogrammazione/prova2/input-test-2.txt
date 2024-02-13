@@ -1,0 +1,391 @@
+390
+mul d 61
+mul e 52
+lab vg
+add e 76
+add c 100
+mul c 80
+mul b 44
+jmp c 8000 vg
+add a 38
+lab ln
+lab xi
+mul d 6
+mul c 70
+mul b 99
+mul b 9
+lab gr
+lab di
+lab ob
+mul e 7
+mul d 91
+mul d 23
+lab fo
+lab tb
+lab pq
+mul a 10
+lab pr
+lab rj
+sub c 46
+add a 89
+add e 9
+jmp e 541 vg
+lab fe
+lab le
+jmp e 541 fo
+sub a 30
+add a 34
+add c 88
+add d 79
+jmp d 79 gr
+sub d 18
+mul b 5
+lab wg
+add d 58
+lab tf
+mul a 86
+sub c 3
+add d 31
+add d 83
+jmp c 560039 vg
+jmp e 541 pr
+add c 13
+add d 57
+sub e 63
+sub d 18
+lab zt
+add b 98
+lab xc
+lab gj
+jmp d 272 tf
+sub a 74
+lab bn
+add a 65
+mul a 21
+sub a 37
+add d 17
+add e 94
+mul b 16
+lab qc
+sub e 77
+lab rb
+sub e 11
+lab we
+lab ju
+lab cc
+sub c 74
+lab yh
+jmp a 854012 tb
+sub a 80
+add c 97
+add d 72
+jmp e 484 gj
+sub b 73
+jmp a 853932 qc
+add a 72
+lab bz
+sub e 57
+jmp b 1495 bn
+sub b 48
+sub c 86
+lab ir
+sub a 27
+jmp a 853977 gj
+sub d 37
+mul e 37
+jmp a 853977 rb
+add e 48
+jmp c 559989 rb
+add d 79
+lab fm
+lab cq
+lab ni
+add e 48
+lab or
+lab mt
+mul b 45
+sub c 95
+sub d 68
+sub c 86
+lab oz
+sub c 59
+jmp b 65115 ju
+jmp a 853977 cc
+lab wu
+add b 11
+sub e 78
+mul d 100
+lab sr
+sub e 48
+sub c 58
+lab rk
+jmp c 559691 qc
+add c 84
+add d 97
+sub c 70
+add c 35
+sub d 91
+lab cy
+lab rh
+sub e 46
+add c 10
+sub c 83
+lab cr
+sub b 28
+add b 53
+lab io
+jmp e 15723 ln
+add e 79
+jmp a 853977 bn
+sub a 28
+add b 75
+lab rn
+add d 96
+lab rl
+mul e 5
+sub d 64
+sub c 62
+lab is
+sub c 51
+add a 99
+jmp d 33538 ir
+jmp e 79010 xi
+lab py
+add b 56
+jmp e 79010 pq
+jmp a 854048 tf
+lab ah
+add d 83
+sub d 35
+mul d 9
+lab ac
+add c 90
+add d 3
+sub d 93
+add d 74
+lab wl
+sub a 50
+jmp d 302258 ob
+sub d 25
+add e 15
+add c 14
+mul e 1
+sub e 6
+lab ej
+sub b 89
+lab rs
+jmp c 559658 ju
+sub e 55
+lab ua
+add d 26
+lab an
+jmp e 78964 ac
+lab lk
+lab uo
+lab fa
+jmp c 559658 pr
+add e 41
+mul b 10
+lab no
+sub b 39
+jmp d 302259 oz
+add d 79
+add d 55
+lab ka
+add d 62
+sub c 87
+jmp c 559571 qc
+sub d 75
+jmp c 559571 xc
+jmp a 853998 cr
+add d 73
+jmp a 853998 mt
+lab uz
+sub e 18
+sub e 15
+jmp d 302453 py
+lab sv
+add c 90
+sub c 29
+sub a 100
+lab op
+sub e 75
+sub d 59
+sub c 66
+add e 95
+sub a 62
+lab lt
+sub e 32
+lab yj
+lab hf
+lab cz
+add a 65
+lab xe
+lab su
+lab kz
+lab jj
+sub e 24
+lab lj
+lab dx
+lab ny
+jmp d 302394 mt
+jmp c 559566 lk
+add e 28
+jmp a 853901 is
+add a 86
+sub e 47
+lab yy
+sub b 38
+sub c 56
+jmp c 559510 ka
+lab dj
+lab hc
+add d 35
+lab kf
+add b 61
+sub a 40
+add c 8
+jmp c 559518 rn
+add e 44
+lab xj
+jmp c 559518 gr
+add d 75
+add d 77
+lab wv
+jmp e 78961 tf
+sub d 28
+add c 62
+add d 84
+add a 52
+add a 69
+sub c 27
+jmp a 854068 tb
+add c 97
+add e 8
+lab qy
+jmp c 559650 rl
+jmp d 302637 ob
+sub d 32
+jmp d 302605 gr
+jmp e 78969 vg
+add d 15
+add a 29
+add e 46
+sub c 81
+add c 43
+add a 59
+sub e 27
+add c 72
+sub c 9
+add a 37
+lab ys
+sub d 97
+jmp e 78988 di
+jmp e 78988 vg
+jmp a 854193 yh
+jmp d 302523 cr
+lab ic
+add a 9
+add a 15
+sub b 78
+jmp e 78988 uo
+sub c 4
+jmp d 302523 dj
+sub a 13
+sub b 80
+jmp c 559671 cq
+add b 37
+jmp c 559671 ka
+sub e 52
+sub d 32
+jmp e 78936 tf
+jmp c 559671 qc
+sub d 56
+add a 10
+add e 31
+sub c 65
+jmp b 651793 cy
+add d 25
+jmp b 651793 qc
+jmp c 559606 we
+lab yz
+lab ed
+jmp c 559606 rb
+lab kg
+sub d 95
+add e 12
+lab dq
+sub a 3
+jmp b 651793 ny
+sub d 90
+add e 18
+add b 54
+add a 17
+sub a 23
+lab bv
+jmp b 651847 xe
+mul d 3
+add c 92
+sub e 74
+sub e 22
+lab ft
+add d 87
+lab bc
+sub b 83
+lab zm
+lab nq
+jmp b 651764 dq
+sub e 54
+lab uu
+add d 100
+jmp b 651764 op
+lab xa
+jmp a 854205 gj
+lab vi
+add c 77
+jmp b 651764 zt
+lab ya
+sub b 10
+sub a 32
+sub d 29
+add c 54
+jmp e 78847 cr
+lab lq
+jmp b 651754 dj
+jmp d 906983 is
+lab hp
+lab pp
+add b 3
+jmp e 78847 mt
+lab rx
+lab nx
+lab ph
+sub c 28
+sub e 6
+add e 51
+lab iv
+sub a 24
+lab pk
+lab dp
+add e 68
+add b 41
+sub d 57
+lab ne
+add e 14
+sub d 63
+add c 86
+sub b 69
+lab yd
+sub b 97
+add d 45
+sub b 33
+sub a 26
+jmp d 906908 py
+lab px
+add a 72
+sub a 22
+jmp c 559887 yh
+jmp d 906908 we
+jmp d 906908 rs
+lab ho
+add e 77
