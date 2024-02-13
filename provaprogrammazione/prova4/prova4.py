@@ -3,7 +3,7 @@
 import sys
 
 # Se vuoi leggere/scrivere da file decommenta qua
-fin = open("pattern-input-1.txt", "r")  # File di input fornito dalla piattaforma
+fin = open("input3.txt", "r")  # File di input fornito dalla piattaforma
 fout = open("output.txt", "wt+")  # File di output fornito dalla piattaforma
 
 # Se vuoi leggere/scrivere da linea di comando decommenta qua

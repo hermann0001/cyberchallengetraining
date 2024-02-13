@@ -3,7 +3,7 @@
 import sys
 
 # Se vuoi leggere/scrivere da file decommenta qua
-fin = open("input1-test.txt", "r")  # File di input fornito dalla piattaforma
+fin = open("input2.txt", "r")  # File di input fornito dalla piattaforma
 fout = open("output.txt", "wt+")  # File di output fornito dalla piattaforma
 
 
