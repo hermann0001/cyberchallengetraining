@@ -1,1 +1,24 @@
 test/
+
+# Object files
+*.o
+*.obj
+
+# Compiled binary executables
+*.exe
+*.out
+*.app
+*.elf
+
+# Static libraries
+*.a
+*.lib
+
+# Shared libraries
+*.so
+*.dll
+*.dylib
+
+# Core dumps
+core
+*.core
