@@ -1,11 +1,11 @@
 /*
-    input:
-    l1. M, N, S, - M = players, N = tasks, S = submissions
-    l2 - N+1. task-id (unique int 1:N),  correct flag (10 chars string), points (positive integer <=1000)
-    lN+2 - N+S+1. player-id, task-id, flag submitted (10 chars string), timestamp  (positive integer up to 10^6)
+input:
+    line 1: N tasks, T duration of a round (time constraint)
+    line 2: N values representing the length of the tasks t1, ... , tN
+output:
+    W *minimum* number of workers that is necessary to execute all tasks
 
-    output: 
-    M lines with two values, the i-th line contains player-id of the player in i-th position and score.
+note: task time cannot be split between workers and task must be executed in the listed order
 */
 
 #include <iostream>
