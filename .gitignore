@@ -1,5 +1,3 @@
-test/
-
 # Object files
 *.o
 *.obj
@@ -22,3 +20,5 @@ test/
 # Core dumps
 core
 *.core
+
+.vscode
